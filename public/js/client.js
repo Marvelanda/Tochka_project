@@ -1,5 +1,4 @@
 const bookingForm = document.getElementById('booking_form');
-console.log(bookingForm);
 
 bookingForm.addEventListener('submit', async (evt) => {
   evt.preventDefault();

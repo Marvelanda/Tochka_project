@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Bernier';
+  src: url('../fonts/BERNIERDistressed-Regular.otf');
+}
+
 body {
   margin: 0;
 }
@@ -25,6 +30,15 @@ li {
   list-style-type: none;
 }
 
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.hidden {
+  display: none;
+}
+
 .header,
 .footer {
   background-color: black;
@@ -34,22 +48,22 @@ li {
 .footer-container {
   padding-left: 100px;
   padding-right: 100px;
-  height: 85px;
+  height: 80px;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
 .footer-container {
-  justify-content: space-between;
+  justify-content: start;
+}
+
+.icons {
+  margin-left: 130px;
 }
 
 .icons a img {
   margin-right: 15px;
-}
-
-.icons a {
-  border-radius: 50%;
 }
 
 .logo img {
@@ -63,10 +77,10 @@ li {
 }
 
 .navigation-list__item a {
-  font-family: Nunito Sans;
+  font-family: 'Bernier';
   font-style: normal;
   font-weight: normal;
-  font-size: 11px;
+  font-size: 21px;
   line-height: 15px;
   color: #ffffff;
   text-decoration: none;
@@ -82,10 +96,10 @@ li {
 
 .phone {
   margin-right: 50px;
-  font-family: Nunito Sans;
+  font-family: 'Bernier';
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
+  font-size: 20px;
   line-height: 15px;
   text-align: right;
   text-decoration-line: underline;
@@ -93,7 +107,7 @@ li {
 }
 
 .button {
-  font-family: Nunito Sans;
+  font-family: 'PT Sans', sans-serif;
   font-style: italic;
   font-weight: normal;
   font-size: 11px;
@@ -109,8 +123,19 @@ li {
   border-color: transparent;
 }
 
+.title {
+  font-size: 20px;
+  list-style: none;
+  text-align: center;
+  font-family: 'Bernier';
+  font-style: normal;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: #c21616;
+}
+
 .section-first {
-  height: 500px;
+  height: 620px;
   background-image: url('../img/DSCF9095.jpg');
   background-size: cover;
   padding-top: 194px;
@@ -125,24 +150,33 @@ li {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 500px;
+  height: 620px;
   position: absolute;
-  margin-top: 85px;
+  margin-top: 80px;
 }
 
 .title--main {
   margin: 0;
   margin-top: 30px;
+  margin-bottom: 15px;
   text-align: center;
-  font-size: 35px;
+  font-size: 45px;
   line-height: 53px;
   text-transform: uppercase;
-  color: black;
+}
+
+.text {
+  font-family: 'PT Sans', sans-serif;
+  margin-bottom: 10px;
 }
 
 .intro {
   max-width: 36rem;
   margin: 0 auto;
+}
+
+.foto img {
+  margin-bottom: 20px;
 }
 
 .section-second-container {
@@ -159,6 +193,7 @@ li {
 }
 
 .form {
+  font-family: 'PT Sans', sans-serif;
   display: flex;
   flex-direction: column;
 }
@@ -167,17 +202,19 @@ li {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 88vh;
-  background-image: url('../img/DSCF5974__.png');
+  height: 77vh;
+  background-image: url('../img/DSCF59741__.png');
   background-blend-mode: hue;
   background-size: cover;
 }
 
 .form-sixth-section {
-  margin-top: 30px;
+  margin-top: 29px;
   padding: 15px 20px;
   border: 2px solid black;
-  background-color: rgb(136, 136, 136);
+  box-shadow: inset 2px 2px 5px rgba(194, 148, 148, 0.5),
+    1px 1px 5px rgb(199, 148, 148);
+  background-color: rgb(221, 221, 221);
 }
 
 .description-clue {
@@ -192,14 +229,12 @@ li {
 
 .button-submit--3 {
   margin-top: 40px;
-}
-
-.button-submit--3 {
   align-self: center;
 }
 
 input::placeholder {
   color: #474747;
+  font-family: 'PT Sans', sans-serif;
 }
 
 .description-checkbox > input[type='checkbox'] {
@@ -214,7 +249,7 @@ input::placeholder {
   width: 1em;
   height: 1em;
   border: 1px solid #2b2a2a;
-  background-color: rgb(223, 223, 223);
+  background-color: rgb(255, 255, 255);
   margin-right: 0.5em;
   background-repeat: no-repeat;
   background-position: center center;
@@ -232,7 +267,58 @@ input::placeholder {
   text-align: center;
 }
 
+.section-menus,
+.section-contacts {
+  height: 74vh;
+}
+
 .menu-subtitle {
-  margin-top: 0;
+  margin-top: 20px;
   align-self: center;
+}
+
+.slider {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.dots {
+  margin-right: 445px;
+  margin-left: 445px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+input[data-name='images'] {
+  cursor: pointer;
+}
+
+.menus-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menus-container div a:hover {
+  color: #f71616;
+  transition: color 0.5s;
+}
+
+.menus-container--1 {
+  width: 40vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menus-container--1 a {
+  width: 50%;
+  text-align: center;
+}
+
+.section-contacts {
+  text-align: center;
+}
+
+.section-contacts p:last-of-type {
+  margin-bottom: 30px;
 }
