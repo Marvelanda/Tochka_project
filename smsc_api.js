@@ -1,38 +1,38 @@
 // SMSC.RU API (smsc.ru) версия 1.1 (03.07.2019)
 
-var Api = function () {
+const Api = function () {
   'use strict';
-  var http = require('http');
-  var qs = require('querystring');
-  var FormData = require('form-data');
-  var fs = require('fs');
+  const http = require('http');
+  const qs = require('querystring');
+  const FormData = require('form-data');
+  const fs = require('fs');
 
-  var ssl = false,
+  let ssl = false,
     def_fmt = 3,
     host = 'smsc.ru',
     charset = 'utf-8';
 
-  var login = 'login',
+  let login = 'login',
     password = 'password',
     sender,
     log = console.log;
 
-  var PHONE_TYPES = {
+  const PHONE_TYPES = {
     string: 1,
     number: 2,
   };
 
-  var get_host = function (www) {
+  const get_host = function (www) {
     if (!www) www = '';
     return (ssl ? 'https://' : 'http://') + www + host + '/sys/';
   };
 
-  var isInArr = function (arr, val) {
+  const isInArr = function (arr, val) {
     if (!arr || !arr.length) return false;
     return arr.indexOf(val) !== -1;
   };
 
-  var convert_data = function (data, notConvert) {
+  const convert_data = function (data, notConvert) {
     if (data.fmt) delete data.fmt;
     if (data.msg) {
       data.mes = data.msg;
@@ -52,7 +52,7 @@ var Api = function () {
     }
 
     if (data.list) {
-      var list = '';
+      let list = '';
       for (var i in data.list) {
         list += i + ':' + data.list[i] + '\n';
       }
@@ -64,12 +64,12 @@ var Api = function () {
       data.phones = data.phones.join(',');
   };
 
-  var convert_files = function (form, data) {
+  const convert_files = function (form, data) {
     if (!data.files) return;
 
     if (typeof data.files === 'string') {
-      var f = data.files;
-      var bin = fs.readFileSync(f);
+      const f = data.files;
+      const bin = fs.readFileSync(f);
       form.append(i, bin, {
         filename: f,
       });
@@ -77,8 +77,8 @@ var Api = function () {
     }
 
     for (var i in data.files) {
-      var f = data.files[i];
-      var bin = fs.readFileSync(f);
+      const f = data.files[i];
+      const bin = fs.readFileSync(f);
       form.append(i, bin, {
         filename: f,
       });
@@ -87,10 +87,10 @@ var Api = function () {
     delete data.files;
   };
 
-  var read_url = function (prs, clb, notConvert) {
-    var fmt = prs.fmt ? prs.fmt : def_fmt;
+  const read_url = function (prs, clb, notConvert) {
+    const fmt = prs.fmt ? prs.fmt : def_fmt;
 
-    var fd = new FormData();
+    const fd = new FormData();
     fd.append('fmt', fmt);
     fd.append('login', login);
     fd.append('psw', password);
@@ -104,21 +104,21 @@ var Api = function () {
         convert_files(fd, prs.data);
       }
 
-      for (var i in prs.data) {
+      for (let i in prs.data) {
         fd.append(i, prs.data[i]);
       }
     }
 
-    var www = '';
-    var count = 0;
-    var submit = function () {
+    let www = '';
+    let count = 0;
+    const submit = function () {
       fd.submit(get_host(www) + prs.file, function (err, res) {
         if (err) {
           if (count++ < 5) {
             www = 'www' + (count !== 1 ? count : '') + '.';
             submit();
           } else {
-            var error = {
+            const error = {
               error: 'Server Not Work',
               error_code: 100,
             };
@@ -131,7 +131,7 @@ var Api = function () {
 
         res.on('data', function (data) {
           if (clb) {
-            var d = JSON.parse(data);
+            const d = JSON.parse(data);
             clb(
               d,
               data,
@@ -158,7 +158,7 @@ var Api = function () {
   // Отправка сообщения любого типа (data — объект, включающий параметры отправки. Подробнее смотрите в документации к API)
   this.send = function (type, data, clb) {
     if (typeof data !== 'object') data = {};
-    var opts = {
+    const opts = {
       file: 'send.php',
       data: data,
     };

@@ -28,6 +28,10 @@ app.use('/menus', menusRoute);
 app.use('/bookings', bookingsRoute);
 app.use('/contacts', contactsRoute);
 
+app.use((req, res) => {
+  res.render('404');
+});
+
 app.listen(PORT, () => {
   console.log('Server has been started on port: ', PORT);
 });

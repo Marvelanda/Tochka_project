@@ -12,48 +12,74 @@ const src = [
   '/img/slider/DSCF3868.jpg',
 ];
 
-for (let i = 0; i < dots.length; i++) {
-  dots[i].addEventListener('click', (evt) => {
-    image.src = src[evt.target.id];
+function moveInt() {
+  let index = 0;
+
+  setInterval(() => {
     dots.forEach((item) => {
       item.checked = false;
     });
-    dots[evt.target.id].checked = true;
-  });
-}
-
-function moveImg() {
-  let index = 0;
-
-  document.addEventListener('keydown', (evt) => {
-    if (evt.key === 'ArrowRight') {
-      if (index < src.length - 1) {
-        dots[index].checked = false;
-        index++;
-        image.src = src[index];
-        dots[index].checked = true;
-      } else {
-        dots[index].checked = false;
-        index = 0;
-        image.src = src[index];
-        dots[index].checked = true;
-      }
+    if (index < src.length - 1) {
+      dots[index].checked = false;
+      index++;
+      image.src = src[index];
+      dots[index].checked = true;
+    } else if (index >= src.length - 1) {
+      dots[index].checked = false;
+      index = 0;
+      image.src = src[index];
+      dots[index].checked = true;
     }
 
-    if (evt.key === 'ArrowLeft') {
-      if (index > 0) {
-        dots[index].checked = false;
-        index--;
-        image.src = src[index];
-        dots[index].checked = true;
-      } else {
-        dots[index].checked = false;
-        index = 6;
-        image.src = src[index];
-        dots[index].checked = true;
-      }
+    for (let i = 0; i < dots.length; i++) {
+      dots[i].addEventListener('click', (evt) => {
+        index = evt.target.id;
+        dots.forEach((item) => {
+          item.checked = false;
+        });
+
+        image.src = src[evt.target.id];
+
+        dots[evt.target.id].checked = true;
+      });
     }
-  });
+  }, 4000);
 }
 
-moveImg();
+moveInt();
+
+// function moveImg() {
+//   let index = 0;
+
+//   document.addEventListener('keydown', (evt) => {
+//     if (evt.key === 'ArrowRight') {
+//       if (index < src.length - 1) {
+//         dots[index].checked = false;
+//         index++;
+//         image.src = src[index];
+//         dots[index].checked = true;
+//       } else {
+//         dots[index].checked = false;
+//         index = 0;
+//         image.src = src[index];
+//         dots[index].checked = true;
+//       }
+//     }
+
+//     if (evt.key === 'ArrowLeft') {
+//       if (index > 0) {
+//         dots[index].checked = false;
+//         index--;
+//         image.src = src[index];
+//         dots[index].checked = true;
+//       } else {
+//         dots[index].checked = false;
+//         index = 6;
+//         image.src = src[index];
+//         dots[index].checked = true;
+//       }
+//     }
+//   });
+// }
+
+// moveImg();

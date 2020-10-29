@@ -1,40 +1,34 @@
-<div class="section-sixth-content">
-  <div class="section-sixth-container">
-    <form id="booking_form" class="form form-sixth-section" action="/bookings" method="POST">
-      <h3 class="title middle-title-common menu-subtitle">
-        Бронирование стола:
-      </h3>
-      <div class="input-text--3">
-        <div class="input-clue--3">
-          <p class="description description-clue">Введите Ваше имя:</p>
-          <input name="name" type="text" placeholder="Ваше имя" required>
-          <div class="input-underline"></div>
-        </div>
-        <div class="input-clue--3">
-          <p class="description description-clue">Введите Ваш телефон:</p>
-          <input name="phone" type="tel" placeholder="+7 (XXX) XXX-XX-XX" required>
-          <div class="input-underline"></div>
-        </div>
-        <div class="input-clue--3">
-          <p class="description description-clue">
-            Дата бронирования стола:
-          </p>
-          <input name="date" type="date" required>
-          <div class="input-underline input-underline--long"></div>
-        </div>
-        <div class="input-clue--3">
-          <p class="description description-clue">
-            Время бронирования стола:
-          </p>
-          <input name="time" type="time" required>
-          <div class="input-underline input-underline--long"></div>
-        </div>
+<div class="section-booking-container">
+  <form id="booking_form" class="form" action="/bookings" method="POST">
+    <h3 class="title">
+      Бронирование стола:
+    </h3>
+    <div>
+      <div class="input-clue">
+        <p class="description-clue text">Введите Ваше имя:</p>
+        <input name="name" type="text" placeholder="Ваше имя" required>
       </div>
-      <label class="description description-checkbox checkbox--3">
-        <input name="checkbox" type="checkbox" required>
-        <span>Я согласен на обработку персональных данных</span>
-      </label>
-      <input name="bookButton" class="button button-submit button-submit--3 disabled" type="submit" value="Забронировать">
-    </form>
-  </div>
+      <div class="input-clue">
+        <p class="description-clue text">Введите Ваш телефон:</p>
+        <input name="phone" type="tel" placeholder="+7 (XXX) XXX-XX-XX" required>
+      </div>
+      <div class="input-clue">
+        <p class="description-clue text">
+          Дата бронирования стола:
+        </p>
+        <input name="date" type="date" required>
+      </div>
+      <div class="input-clue">
+        <p class="description-clue text">
+          Время бронирования стола:
+        </p>
+        <input name="time" type="time" required>
+      </div>
+    </div>
+    <label class="description-clue text description-checkbox">
+      <input name="checkbox" type="checkbox" required>
+      <span>Я согласен на обработку персональных данных</span>
+    </label>
+    <input name="bookButton" class="button" type="submit" value="Забронировать">
+  </form>
 </div>
