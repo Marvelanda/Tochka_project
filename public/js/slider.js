@@ -43,7 +43,7 @@ function moveInt() {
         dots[evt.target.id].checked = true;
       });
     }
-  }, 4000);
+  }, 3000);
 }
 
 moveInt();
