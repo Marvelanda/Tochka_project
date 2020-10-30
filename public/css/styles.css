@@ -417,8 +417,8 @@ ul {
   cursor: pointer;
   position: fixed;
   top: 530px;
-  height: 80px;
-  width: 80px;
+  height: 70px;
+  width: 70px;
   background: url('../img/up-chevron.svg');
 }
 
@@ -514,6 +514,10 @@ ul {
   margin: 0 auto;
 }
 
+.foto {
+  text-align: center;
+}
+
 .foto img {
   margin-bottom: 20px;
 }
@@ -521,14 +525,12 @@ ul {
 @media screen and (max-width: 424px) {
   .foto img {
     width: 330px;
-    padding-left: 35px;
   }
 }
 
 @media screen and (max-width: 374px) {
   .foto img {
     width: 300px;
-    padding-left: 0px;
   }
 }
 
@@ -707,9 +709,12 @@ input::placeholder {
 }
 
 @media screen and (max-width: 424px) {
-  .section-menus,
+  .section-menus {
+    height: 68vh;
+  }
+
   .section-contacts {
-    height: 72vh;
+    height: 70vh;
   }
 }
 
@@ -766,7 +771,7 @@ input[data-name='images'] {
   }
   .map {
     width: 370px;
-    height: 220px;
+    height: 310px;
   }
 }
 
@@ -777,14 +782,14 @@ input[data-name='images'] {
 
   .map {
     width: 350px;
-    height: 200px;
+    height: 290px;
   }
 }
 
 @media screen and (max-width: 374px) {
   .map {
     width: 300px;
-    height: 160px;
+    height: 270px;
   }
 }
 
