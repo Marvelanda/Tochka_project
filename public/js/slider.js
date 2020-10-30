@@ -47,39 +47,3 @@ function moveInt() {
 }
 
 moveInt();
-
-// function moveImg() {
-//   let index = 0;
-
-//   document.addEventListener('keydown', (evt) => {
-//     if (evt.key === 'ArrowRight') {
-//       if (index < src.length - 1) {
-//         dots[index].checked = false;
-//         index++;
-//         image.src = src[index];
-//         dots[index].checked = true;
-//       } else {
-//         dots[index].checked = false;
-//         index = 0;
-//         image.src = src[index];
-//         dots[index].checked = true;
-//       }
-//     }
-
-//     if (evt.key === 'ArrowLeft') {
-//       if (index > 0) {
-//         dots[index].checked = false;
-//         index--;
-//         image.src = src[index];
-//         dots[index].checked = true;
-//       } else {
-//         dots[index].checked = false;
-//         index = 6;
-//         image.src = src[index];
-//         dots[index].checked = true;
-//       }
-//     }
-//   });
-// }
-
-// moveImg();

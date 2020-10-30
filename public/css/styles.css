@@ -474,7 +474,7 @@ ul {
   font-weight: normal;
   text-transform: uppercase;
   color: #c21616;
-  margin-top: 10px;
+  margin-top: 30px;
   margin-bottom: 10px;
 }
 
@@ -521,12 +521,14 @@ ul {
 @media screen and (max-width: 424px) {
   .foto img {
     width: 330px;
+    padding-left: 35px;
   }
 }
 
-@media screen and (max-width: 424px) {
+@media screen and (max-width: 374px) {
   .foto img {
     width: 300px;
+    padding-left: 0px;
   }
 }
 
@@ -534,7 +536,7 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 77vh;
+  height: 82vh;
   background-image: url('../img/DSCF59741__.png');
   background-blend-mode: hue;
   background-size: cover;
@@ -548,7 +550,7 @@ ul {
 
 @media screen and (max-width: 424px) {
   .section-booking-container {
-    height: 65vh;
+    height: 80vh;
   }
 }
 
@@ -556,7 +558,7 @@ ul {
   display: flex;
   flex-direction: column;
   margin-top: 29px;
-  padding: 15px 20px;
+  padding: 0 20px 25px;
   border: 2px solid rgba(0, 0, 0, 0.363);
   box-shadow: 13px -10px 0px 0px rgb(255, 255, 255);
   background-color: rgb(221, 221, 221);
@@ -661,7 +663,7 @@ input::placeholder {
 
 .section-menus,
 .section-contacts {
-  height: 75.6vh;
+  height: 79.5vh;
 }
 
 .menu-subtitle {
@@ -678,14 +680,21 @@ input::placeholder {
   height: 326px;
 }
 
+@media screen and (max-width: 1299px) {
+  .section-menus,
+  .section-contacts {
+    height: 76vh;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .section-menus,
   .section-contacts {
-    height: 68vh;
+    height: 70vh;
   }
 
   .section-menus {
-    margin-top: 100px;
+    margin-top: 79px;
   }
 
   .slider {
@@ -700,11 +709,7 @@ input::placeholder {
 @media screen and (max-width: 424px) {
   .section-menus,
   .section-contacts {
-    height: 55vh;
-  }
-
-  .section-menus {
-    margin-top: 50px;
+    height: 72vh;
   }
 }
 
@@ -785,6 +790,7 @@ input[data-name='images'] {
 
 .wrong {
   text-align: center;
+  height: 80vh;
 }
 
 .wrong h1 {

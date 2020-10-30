@@ -18,17 +18,17 @@ router
     const { name, phone, date, time, checkbox } = req.body;
     const formatedDate = date.split('-').reverse().join('.');
 
-    // smsc.send_sms(
-    //   {
-    //     phones: ['79168524327'],
-    //     mes: `Бронирование: ${name}, ${phone}, дата/время: ${formatedDate} ${time}`,
-    //   },
-    //   function (data, raw, err, code) {
-    //     if (err) return console.log(err, 'code: ' + code);
-    //     console.log(data); // object
-    //     console.log(raw); // string in JSON format
-    //   }
-    // );
+    smsc.send_sms(
+      {
+        phones: ['79108650101'],
+        mes: `Бронирование: ${name}, ${phone}, дата/время: ${formatedDate} ${time}`,
+      },
+      function (data, raw, err, code) {
+        if (err) return console.log(err, 'code: ' + code);
+        console.log(data); // object
+        console.log(raw); // string in JSON format
+      }
+    );
 
     res.json({
       message1: 'Благодарим Вас за запрос!',
