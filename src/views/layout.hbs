@@ -5,22 +5,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
   <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
   <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+
   <script defer src="/js/index.js"></script>
   <script defer src="/js/booking.js"></script>
   <script defer src="/js/slider.js"></script>
   <script defer src="/js/menu.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
   <title>TOCHKA</title>
 </head>
+{{>header}}
 
 <body>
-  {{>header}}
+
   <main>
+
     {{{body}}}
+
   </main>
-  {{>footer}}
+
 </body>
+{{>footer}}
 
 </html>

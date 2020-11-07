@@ -1,49 +1,25 @@
-const slider = document.querySelector('.slider');
-const image = slider.querySelector('img');
-const dots = document.querySelectorAll('[data-name="images"]');
-
-const src = [
-  '/img/slider/DSCF1317.jpg',
-  '/img/slider/DSCF0631.jpg',
-  '/img/slider/DSCF1259.jpg',
-  '/img/slider/DSCF1679.jpg',
-  '/img/slider/_DSF4253.jpg',
-  '/img/slider/photo35.jpg',
-  '/img/slider/DSCF3868.jpg',
-];
-
-function moveInt() {
-  let index = 0;
-
-  setInterval(() => {
-    dots.forEach((item) => {
-      item.checked = false;
-    });
-    if (index < src.length - 1) {
-      dots[index].checked = false;
-      index++;
-      image.src = src[index];
-      dots[index].checked = true;
-    } else if (index >= src.length - 1) {
-      dots[index].checked = false;
-      index = 0;
-      image.src = src[index];
-      dots[index].checked = true;
-    }
-
-    for (let i = 0; i < dots.length; i++) {
-      dots[i].addEventListener('click', (evt) => {
-        index = evt.target.id;
-        dots.forEach((item) => {
-          item.checked = false;
-        });
-
-        image.src = src[evt.target.id];
-
-        dots[evt.target.id].checked = true;
-      });
-    }
-  }, 3000);
-}
-
-moveInt();
+const swiper = new Swiper('.swiper-container', {
+  effect: 'coverflow',
+  grabCursor: true,
+  centeredSlides: true,
+  loop: true,
+  slidesPerView: 'auto',
+  keyboard: {
+    enabled: true,
+  },
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+  coverflowEffect: {
+    rotate: 50,
+    stretch: 0,
+    depth: 100,
+    modifier: 1,
+    slideShadows: true,
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+});
