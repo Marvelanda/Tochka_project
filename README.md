@@ -1,7 +1,7 @@
 # Tochka_project
 
 A site for a seafood restaurant "Tochka". 
-Used the following stack: html, css, express, nodejs, handlebars.
+Used the following stack: html, css, javascript, express, nodejs, handlebars.
 
 Deployed on Heroku - https://tochkaproject.herokuapp.com/.
 
