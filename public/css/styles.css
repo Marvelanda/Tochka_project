@@ -510,6 +510,13 @@ ul {
   }
 }
 
+@media screen and (max-width: 374px) {
+  .section-second-right p,
+  .section-second-left p {
+    max-width: 300px;
+  }
+}
+
 .intro {
   text-align: center;
   max-width: 36rem;
@@ -570,12 +577,6 @@ ul {
   }
 }
 
-@media screen and (max-width: 424px) {
-  .form {
-    margin-top: 37px;
-  }
-}
-
 .description-clue {
   margin-bottom: 5px;
 }
@@ -613,6 +614,10 @@ input::placeholder {
 
 .description-checkbox > input:checked + span::before {
   background-image: url('/img/checked.jpg');
+}
+
+.description-checkbox {
+  margin-left: -13px;
 }
 
 @media screen and (max-width: 1299px) {
@@ -666,16 +671,6 @@ input::placeholder {
   align-self: center;
 }
 
-.slider {
-  margin: 0 auto;
-  margin-top: 15px;
-  text-align: center;
-  border: 3px solid #000000;
-  box-shadow: 8px 7px 21px 0px rgba(50, 50, 50, 0.75);
-  width: fit-content;
-  height: 326px;
-}
-
 @media screen and (max-width: 1299px) {
   .section-menus,
   .section-contacts {
@@ -683,7 +678,7 @@ input::placeholder {
   }
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 767px) {
   .section-menus,
   .section-contacts {
     height: 570px;
@@ -692,35 +687,6 @@ input::placeholder {
   .section-menus {
     margin-top: 59px;
   }
-
-  .slider {
-    height: 206px;
-  }
-
-  .slider img {
-    height: 200px;
-  }
-}
-
-@media screen and (max-width: 424px) {
-  .section-menus {
-    height: 68vh;
-  }
-
-  .section-contacts {
-    height: 70vh;
-  }
-}
-
-.dots {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-  text-align: center;
-}
-
-input[data-name='images'] {
-  cursor: pointer;
 }
 
 .menus-container {
@@ -823,6 +789,12 @@ input[data-name='images'] {
 .swiper-container {
   width: 100%;
   height: 350px;
+}
+
+@media screen and (max-width: 767px) {
+  .swiper-container {
+    margin-bottom: 70px;
+  }
 }
 
 .swiper-slide {
