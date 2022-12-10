@@ -3,8 +3,6 @@
 A site for a seafood restaurant "Tochka". 
 Used the following stack: html, css, javascript, express, nodejs, handlebars.
 
-Deployed on Heroku - https://tochkaproject.herokuapp.com/.
-
 Desktop version:
 
 ![alt text](public/screenshots/desktop.png)
